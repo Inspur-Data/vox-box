@@ -20,7 +20,13 @@ on:
     - "**.png"
     - "**.jpg"
     - "**.gif"
-
+    
+  workflow_dispatch:
+    inputs:
+      run_e2e:
+        description: 'Force e2e to run'
+        required: false
+        type: boolean
 jobs:
   build-and-push-image:
     timeout-minutes: 20
